@@ -1,12 +1,9 @@
-import { Form, Icon, Input } from 'antd';
+import { Button, Form, Icon, Input } from 'antd';
 import React, { Component, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { createUser } from '../../core/api/db';
 import { LANDING } from '../../routes';
 import { createUserWithEmailAndPassword } from '../api/auth';
-import { ErrorMessage } from '../components/common/ErrorMessage';
-import { FormButton } from '../components/common/FormButton';
-import { FormContainer } from '../components/common/FormContainer';
 import { EMAIL_ERROR_TYPES } from '../constants';
 
 const SignUpForm = ({ form, onSubmit }) => {
@@ -53,7 +50,7 @@ const SignUpForm = ({ form, onSubmit }) => {
     };
 
     return (
-        <FormContainer>
+        <div className="form-container">
             <h1 className="title">Sign Up</h1>
             <Form onSubmit={(event) => handleSubmit(event)} className="login-form">
                 <Form.Item>
@@ -108,18 +105,18 @@ const SignUpForm = ({ form, onSubmit }) => {
                 </Form.Item>
 
                 <Form.Item>
-                    <FormButton
+                    <Button
                         type="primary"
                         htmlType="submit"
                         className="login-form-button signup-form-button"
                     >
                         Sign Up
-                    </FormButton>
+                    </Button>
                 </Form.Item>
 
-                <ErrorMessage>{error}</ErrorMessage>
+                <div className="error-message">{error}</div>
             </Form>
-        </FormContainer>
+        </div>
     );
 };
 
