@@ -6,6 +6,9 @@ import { LANDING } from '../../routes';
 import { createUserWithEmailAndPassword } from '../api/auth';
 import { EMAIL_ERROR_TYPES } from '../constants';
 
+
+// import '../styles/auth.scss';
+
 const SignUpForm = ({ form, onSubmit }) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -108,7 +111,7 @@ const SignUpForm = ({ form, onSubmit }) => {
                     <Button
                         type="primary"
                         htmlType="submit"
-                        className="login-form-button signup-form-button"
+                        className="signup-form-button"
                     >
                         Sign Up
                     </Button>

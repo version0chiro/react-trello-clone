@@ -1,10 +1,7 @@
-import { Form, Icon, Input } from 'antd';
+import { Button, Form, Icon, Input } from 'antd';
 import React, { Component } from 'react';
 import { byPropKey } from '../../shared/utils';
 import { passwordReset } from '../api/auth';
-import { ErrorMessage } from '../components/common/ErrorMessage';
-import { FormButton } from '../components/common/FormButton';
-import { FormContainer } from '../components/common/FormContainer';
 import { EMAIL_ERROR_TYPES } from '../constants';
 
 const INITIAL_STATE = {
@@ -55,7 +52,7 @@ class PasswordForgetScreen extends Component {
         const { error } = this.state;
 
         return (
-            <FormContainer>
+            <div className="form-container">
                 <h1 className="title">Password Forget</h1>
                 <Form onSubmit={(event) => this.handleSubmit(event)} className="login-form">
                     <Form.Item
@@ -77,14 +74,14 @@ class PasswordForgetScreen extends Component {
                     </Form.Item>
 
                     <Form.Item>
-                        <FormButton type="primary" htmlType="submit" className="login-form-button">
+                        <Button  type="primary" htmlType="submit" className="login-form-button">
                             Restore
-                        </FormButton>
+                        </Button>
                     </Form.Item>
 
-                    <ErrorMessage>{error}</ErrorMessage>
+                    <div className="error-message">{error}</div>
                 </Form>
-            </FormContainer>
+            </div>
         );
     }
 }

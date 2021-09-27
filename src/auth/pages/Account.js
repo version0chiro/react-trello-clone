@@ -1,11 +1,8 @@
-import { Form, Icon, Input } from 'antd';
+import { Button, Form, Icon, Input } from 'antd';
 import React, { Component } from 'react';
 
 import { passwordUpdate } from '../api/auth';
 import { byPropKey } from '../../shared/utils';
-import { ErrorMessage } from '../components/common/ErrorMessage';
-import { FormButton } from '../components/common/FormButton';
-import { FormContainer } from '../components/common/FormContainer';
 import { AuthUserContext } from '../utils/AuthUserContext';
 import { withAuthorization } from '../utils/AuthHOC';
 
@@ -39,7 +36,7 @@ class AccountScreen extends Component {
         return (
             <AuthUserContext.Consumer>
                 {(authUser) => (
-                    <FormContainer>
+                    <div className="form-container">
                         <h3>Account: {authUser.email}</h3>
 
                         <Form onSubmit={(event) => this.handleSubmit(event)} className="login-form">
@@ -92,14 +89,18 @@ class AccountScreen extends Component {
                             </Form.Item>
 
                             <Form.Item>
-                                <FormButton type="primary" htmlType="submit">
+                                <Button
+                                    type="primary"
+                                    htmlType="submit"
+                                    className="login-form-button"
+                                >
                                     Reset my password
-                                </FormButton>
+                                </Button>
                             </Form.Item>
 
-                            <ErrorMessage>{error}</ErrorMessage>
+                            <div className="error-message">{error}</div>
                         </Form>
-                    </FormContainer>
+                    </div>
                 )}
             </AuthUserContext.Consumer>
         );
