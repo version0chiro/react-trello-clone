@@ -1,4 +1,4 @@
-import { Form, Icon, Input } from 'antd';
+import { Button, Form, Icon, Input } from 'antd';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { auth, provider } from '../../core/api/firebase';
@@ -6,10 +6,9 @@ import { actionTypes } from '../../core/api/reducer';
 import { useStateValue } from '../../core/api/StateProvider';
 import { BOARDS, LANDING, PASSWORD_FORGET, SIGN_UP } from '../../routes';
 import { signInWithEmailAndPassword } from '../api/auth';
-import { ErrorMessage } from '../components/common/ErrorMessage';
-import { FormButton } from '../components/common/FormButton';
-import { FormContainer } from '../components/common/FormContainer';
 import { EMAIL_ERROR_TYPES } from '../constants';
+
+import '../styles/auth.scss';
 
 const SignInForm = ({ form }) => {
     const [email, setEmail] = useState('');
@@ -61,8 +60,8 @@ const SignInForm = ({ form }) => {
     };
 
     return (
-        <FormContainer>
-            <h1>Sign In</h1>
+        <div className="form-container">
+            <h1>Sign In here</h1>
 
             <Form onSubmit={onSubmit}>
                 <Form.Item validateStatus={emailInputErr.status} help={emailInputErr.message}>
@@ -93,31 +92,31 @@ const SignInForm = ({ form }) => {
 
                 <Form.Item>
                     <div className="login-buttons">
-                        <FormButton type="primary" htmlType="submit" className="login-form-button">
+                        <Button type="primary" htmlType="submit" className="login-form-button">
                             Log in
-                        </FormButton>
+                        </Button>
                         or
-                        <FormButton
+                        <Button
                             type="danger"
                             htmlType="submit"
                             className="login-form-button"
                             onClick={signInWithGoogle}
                         >
                             Continue with Google
-                        </FormButton>
+                        </Button>
                     </div>
                 </Form.Item>
 
-                <ErrorMessage>{error}</ErrorMessage>
+                <div className="error-message">{error}</div>
             </Form>
-        </FormContainer>
+        </div>
     );
 };
 
 export const WrappedSignInForm = Form.create()(SignInForm);
 
 const SignInPage = ({ history }) => (
-    <FormContainer>
+    <div className="form-container">
         <WrappedSignInForm history={history} />
         <p>
             <Link to={PASSWORD_FORGET}>Forgot Password?</Link>
@@ -125,7 +124,7 @@ const SignInPage = ({ history }) => (
         <p>
             Don't have an account? <Link to={SIGN_UP}>Sign Up</Link>
         </p>
-    </FormContainer>
+    </div>
 );
 
 export default SignInPage;
