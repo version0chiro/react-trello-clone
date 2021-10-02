@@ -6,13 +6,7 @@ import { createBoard, getBoards } from '../api/boards';
 import { Spinner } from '../../../shared/components/Spinner';
 import { isEmpty, mergeDataWithKey } from '../../../shared/utils';
 import { CreateBoardModal } from '../components/CreateBoardModal';
-import {
-    BoardTypes,
-    BoardTypeTitle,
-    CreateBoardTitle,
-    NewBoardContent,
-    StyledNewBoard,
-} from '../styles';
+
 import { BoardLink } from '../components/BoardLink';
 
 const BoardsPage = () => {
@@ -47,11 +41,11 @@ const BoardsPage = () => {
     return (
         <div>
             {!isEmpty(starredBoards) && (
-                <BoardTypes>
-                    <BoardTypeTitle>
+                <div className="BoardTypes">
+                    <h4 className="BoardTypeTitle">
                         <Icon type="star" />
                         Starred Boards
-                    </BoardTypeTitle>
+                    </h4>
 
                     {starredBoards.map((board, index) => {
                         return (
@@ -64,14 +58,14 @@ const BoardsPage = () => {
                             </Link>
                         );
                     })}
-                </BoardTypes>
+                </div>
             )}
 
-            <BoardTypes>
-                <BoardTypeTitle>
+            <div className="BoardTypes">
+                <h4 className="BoardTypeTitle">
                     <Icon type="user" />
                     Personal Boards
-                </BoardTypeTitle>
+                </h4>
 
                 <>
                     {boards.map((board, index) => {
@@ -87,13 +81,17 @@ const BoardsPage = () => {
                         );
                     })}
 
-                    <StyledNewBoard color="#eee" onClick={() => setModalVisible(true)}>
-                        <NewBoardContent>
-                            <CreateBoardTitle>Create new board...</CreateBoardTitle>
-                        </NewBoardContent>
-                    </StyledNewBoard>
+                    <div
+                        className="StyledNewBoard"
+                        aria-hidden="true"
+                        onClick={() => setModalVisible(true)}
+                    >
+                        <div className="NewBoardContent">
+                            <div className="CreateBoardTitle">Create new board...</div>
+                        </div>
+                    </div>
                 </>
-            </BoardTypes>
+            </div>
 
             <CreateBoardModal
                 onCreateBoard={handleCreateBoard}

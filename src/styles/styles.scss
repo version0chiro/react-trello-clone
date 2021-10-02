@@ -116,7 +116,6 @@
     display: none;
 }
 
-
 .StyledBoardLink {
     position: relative;
     display: inline-block;
@@ -129,6 +128,23 @@
     border-radius: 4px;
     transition: all 0.3s;
 }
+
+.StyledNewBoard {
+    position: relative;
+    display: inline-block;
+    padding: 4px;
+    width: 250px;
+    height: 80px;
+    background-color: #eee;
+    color: white;
+    margin: 0.5%;
+    border-radius: 4px;
+    transition: all 0.3s;
+    color: #6b808c;
+    cursor: pointer;
+    position: relative;
+}
+
 .BoardTypeTitle {
     i {
         margin-right: 5px;
