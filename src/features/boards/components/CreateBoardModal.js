@@ -1,6 +1,5 @@
-import { Button, Modal } from 'antd';
+import { Button, Modal, Input } from 'antd';
 import React, { Component } from 'react';
-import { BoardForm, StyledInput } from '../styles';
 
 import { DEFAULT_COLOR } from '../../../core/constants';
 
@@ -43,8 +42,12 @@ export class CreateBoardModal extends Component {
                 onCancel={onCloseModal}
                 footer={null}
             >
-                <BoardForm onSubmit={(event) => this.handleCreateBoard(event, onCreateBoard)}>
-                    <StyledInput
+                <form
+                    className="BoardForm"
+                    onSubmit={(event) => this.handleCreateBoard(event, onCreateBoard)}
+                >
+                    <Input
+                        className="StyledInput"
                         placeholder="Add board title"
                         onChange={(event) => this.handleBoardTitleChange(event)}
                         value={this.state.boardTitle}
@@ -55,7 +58,7 @@ export class CreateBoardModal extends Component {
                     >
                         Create
                     </Button>
-                </BoardForm>
+                </form>
             </Modal>
         );
     }
