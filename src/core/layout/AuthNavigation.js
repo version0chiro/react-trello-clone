@@ -1,10 +1,9 @@
 import { Dropdown, Icon, Menu } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import React, { Component } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 import { ACCOUNT, BOARDS } from '../../routes';
-import { Button } from '../../shared/components/Button';
 import { signOut } from '../../auth/api/auth';
 
 class NavigationAuth extends Component {
@@ -14,21 +13,23 @@ class NavigationAuth extends Component {
 
     render() {
         return (
-            <Nav>
-                <NavItems>
+            <nav className="Nav">
+                <div className="NavItems">
                     <Link to={BOARDS}>
-                        <StyledButton>
+                        <div className="Button StyledButton">
                             <Icon type="home" />
-                        </StyledButton>
+                        </div>
                     </Link>
-                </NavItems>
-                <NavUser>
+                </div>
+                <div className="NavUser">
                     <Dropdown
                         overlay={
                             <Menu>
                                 <Menu.Item key="0">
                                     <Icon type="user" theme="outlined" />
-                                    <StyledLink to={ACCOUNT}>Settings</StyledLink>
+                                    <Link className="StyledLink" to={ACCOUNT}>
+                                        Settings
+                                    </Link>
                                 </Menu.Item>
                                 <Menu.Divider />
                                 <Menu.Item key="1" onClick={this.signOut}>
@@ -38,51 +39,51 @@ class NavigationAuth extends Component {
                         }
                         trigger={['click']}
                     >
-                        <StyledButton>
+                        <div className="Button StyledButton">
                             <Icon type="setting" theme="outlined" />
-                        </StyledButton>
+                        </div>
                     </Dropdown>
-                </NavUser>
-            </Nav>
+                </div>
+            </nav>
         );
     }
 }
 
-const StyledLink = styled(Link)`
-    display: inline-block !important;
-`;
+// const StyledLink = styled(Link)`
+//     display: inline-block !important;
+// `;
 
-const StyledButton = styled(Button)`
-    background: hsla(0, 0%, 100%, 0.3);
-    &:hover {
-        background: hsla(0, 0%, 100%, 0.2);
-    }
-    &:active {
-        background: hsla(0, 0%, 100%, 0.1);
-    }
-`;
+// const StyledButton = styled(Button)`
+//     background: hsla(0, 0%, 100%, 0.3);
+//     &:hover {
+//         background: hsla(0, 0%, 100%, 0.2);
+//     }
+//     &:active {
+//         background: hsla(0, 0%, 100%, 0.1);
+//     }
+// `;
 
-const Nav = styled.nav`
-    background: #0079bf;
-    padding: 4px;
-    margin-bottom: 20px;
-`;
+// const Nav = styled.nav`
+//     background: #0079bf;
+//     padding: 4px;
+//     margin-bottom: 20px;
+// `;
 
-const NavItems = styled.div`
-    display: inline-block;
-    margin-right: 10px;
-    a {
-        display: inline-block;
-    }
-`;
+// const NavItems = styled.div`
+//     display: inline-block;
+//     margin-right: 10px;
+//     a {
+//         display: inline-block;
+//     }
+// `;
 
-const NavUser = styled.div`
-    position: absolute;
-    right: 0;
-    top: 4px;
-    div {
-        display: inline-block;
-    }
-`;
+// const NavUser = styled.div`
+//     position: absolute;
+//     right: 0;
+//     top: 4px;
+//     div {
+//         display: inline-block;
+//     }
+// `;
 
 export default withRouter(NavigationAuth);

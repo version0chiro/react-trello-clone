@@ -8,7 +8,7 @@ import { BOARDS, LANDING, PASSWORD_FORGET, SIGN_UP } from '../../routes';
 import { signInWithEmailAndPassword } from '../api/auth';
 import { EMAIL_ERROR_TYPES } from '../constants';
 
-import '../styles/auth.scss';
+import '../../styles/styles.scss'
 
 const SignInForm = ({ form }) => {
     const [email, setEmail] = useState('');

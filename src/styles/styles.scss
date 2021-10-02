@@ -1,0 +1,90 @@
+.error-message {
+    color: red;
+    margin-bottom: 24px;
+}
+
+.login-form-button {
+    width: 100%;
+}
+
+.signup-form-button {
+    width: 100%;
+}
+
+.form-container {
+    width: 300px;
+    margin: auto;
+}
+
+.Button {
+    transition: 0.1s ease;
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    font-weight: 700;
+    line-height: 32px;
+    margin-right: 4px;
+    min-width: 32px;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+        cursor: pointer;
+    }
+    i {
+        font-size: 1rem !important;
+    }
+}
+
+.GrayButton {
+    color: gray;
+    margin: 0;
+    font-size: 10px;
+    padding: 4px;
+    line-height: inherit;
+    min-width: auto;
+    &:hover {
+        background: #eee;
+        color: gray;
+    }
+}
+
+.loading {
+    text-align: center;
+}
+
+.NavUser {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    div {
+        display: inline-block;
+    }
+}
+
+.NavItems {
+    display: inline-block;
+    margin-right: 10px;
+    a {
+        display: inline-block;
+    }
+}
+
+.Nav {
+    background: #0079bf;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+.StyledButton {
+    background: hsla(0, 0%, 100%, 0.3);
+    &:hover {
+        background: hsla(0, 0%, 100%, 0.2);
+    }
+    &:active {
+        background: hsla(0, 0%, 100%, 0.1);
+    }
+}
+
+.StyledLink{
+    display: inline-block !important;
+}
