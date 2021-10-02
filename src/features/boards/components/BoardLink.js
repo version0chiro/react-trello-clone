@@ -1,11 +1,16 @@
 import { Icon } from 'antd';
-import { Favorite, StyledBoardLink, Title } from '../styles';
 
 export const BoardLink = ({ title, favorite }) => (
-    <StyledBoardLink color="#0079BF">
-        <Title>{title}</Title>
-        <Favorite favorite={favorite}>
-            <Icon type="star" />
-        </Favorite>
-    </StyledBoardLink>
+    <div className="StyledBoardLink">
+        <div className="Title">{title}</div>
+        {favorite ? (
+            <div className="Favorite">
+                <Icon type="star" />
+            </div>
+        ) : (
+            <div className="NotFavorite">
+                <Icon type="star" />
+            </div>
+        )}
+    </div>
 );

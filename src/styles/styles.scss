@@ -1,3 +1,4 @@
+// Auth Styling
 .error-message {
     color: red;
     margin-bottom: 24px;
@@ -16,6 +17,7 @@
     margin: auto;
 }
 
+//Auth Navigation Styling
 .Button {
     transition: 0.1s ease;
     border-radius: 3px;
@@ -85,6 +87,74 @@
     }
 }
 
-.StyledLink{
+.StyledLink {
     display: inline-block !important;
+}
+
+//Boards Styling
+
+.BoardTypes {
+    margin: auto;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.Favorite {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    transition: all 0.1s;
+    color: #f2d600;
+    display: block;
+}
+.NotFavorite {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    transition: all 0.1s;
+    color: #ffffff;
+    display: none;
+}
+
+
+.StyledBoardLink {
+    position: relative;
+    display: inline-block;
+    padding: 4px;
+    width: 250px;
+    height: 80px;
+    background-color: #0079bf;
+    color: white;
+    margin: 0.5%;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+.BoardTypeTitle {
+    i {
+        margin-right: 5px;
+        color: gray;
+    }
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+
+.NewBoardContent {
+    text-align: center;
+}
+
+.CreateBoardTitle {
+    top: 25px;
+    position: relative;
+}
+
+.Title {
+    font-weight: bold;
+}
+
+.StyledInput {
+    margin-bottom: 10px !important;
+}
+
+.BoardForm {
+    width: 100%;
 }
